@@ -1,0 +1,52 @@
+version: "3.8"
+
+# Levanta ambos contenedores (SQL Server y MariaDB) con un solo comando:
+#   docker compose up -d
+#
+# Detener:        docker compose down
+# Ver logs:       docker compose logs -f
+# Estado:         docker compose ps
+
+services:
+  # ---------------------------------------------------------------
+  # Contenedor 1: SQL Server 2022
+  # ---------------------------------------------------------------
+  sqlserver:
+    build:
+      context: ./sqlserver
+      dockerfile: Dockerfile
+    image: demo-sqlserver:1.0
+    container_name: demo-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Passw0rd!2024"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------
+  # Contenedor 2: MariaDB 11
+  # ---------------------------------------------------------------
+  mariadb:
+    build:
+      context: ./mariadb
+      dockerfile: Dockerfile
+    image: demo-mariadb:1.0
+    container_name: demo-mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: "Passw0rd!2024"
+      MARIADB_DATABASE: "TiendaDB"
+      MARIADB_USER: "appuser"
+      MARIADB_PASSWORD: "Passw0rd!2024"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  sqlserver-data:
+  mariadb-data:

@@ -1,0 +1,30 @@
+@model WebMvcApp.Models.Cliente
+@{
+    ViewData["Title"] = "Eliminar Cliente";
+}
+
+<h1>Eliminar Cliente</h1>
+<h3 class="text-danger">¿Está seguro de eliminar este registro?</h3>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Nombre)</dt>
+    <dd class="col-sm-9">@Model.Nombre</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Email)</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Telefono)</dt>
+    <dd class="col-sm-9">@Model.Telefono</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Ciudad)</dt>
+    <dd class="col-sm-9">@Model.Ciudad</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => m.FechaRegistro)</dt>
+    <dd class="col-sm-9">@Model.FechaRegistro.ToString("yyyy-MM-dd")</dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ClienteId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a class="btn btn-secondary" asp-action="Index">Cancelar</a>
+</form>
