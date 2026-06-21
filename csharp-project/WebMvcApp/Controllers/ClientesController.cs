@@ -7,9 +7,8 @@ namespace WebMvcApp.Controllers;
 
 // ======================================================================
 // CRUD de Clientes contra el contexto SQL Server.
-// (Equivalente al codigo que generaria el scaffolding automatico de
-//  controladores y vistas de ASP.NET Core MVC.)
 // ======================================================================
+
 public class ClientesController : Controller
 {
     private readonly SqlServerContext _context;

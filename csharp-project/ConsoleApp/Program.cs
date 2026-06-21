@@ -7,7 +7,6 @@ namespace ConsoleApp;
 // Aplicacion de consola .NET Core que prueba el acceso a AMBOS contenedores:
 //   1) SQL Server  (puerto 1433)
 //   2) MariaDB     (puerto 3306)
-// Ejecuta "SELECT * FROM Clientes" en cada uno y muestra los registros.
 // ======================================================================
 public static class Program
 {
