@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../../../Desktop/csharp-project/csharp-project/WebMvcApp/WebMvcApp.csproj" />
+  <Project Path="../../../Desktop/csharp-project/csharp-project/WinFormsApp/WinFormsApp.csproj" />
+  <Project Path="../ConsoleApp/ConsoleApp/ConsoleApp.csproj" />
+</Solution>
