@@ -1,8 +1,5 @@
 -- ==================================================================
 -- SQL Server: creacion de base de datos TiendaDB con 4 entidades
--- Ejecutar dentro del contenedor con sqlcmd, o desde SSMS / Azure Data Studio.
---   docker exec -i demo-sqlserver /opt/mssql-tools18/bin/sqlcmd \
---     -S localhost -U sa -P "Passw0rd!2024" -C -i /tmp/01_init_sqlserver.sql
 -- ==================================================================
 
 IF DB_ID('TiendaDB') IS NULL
